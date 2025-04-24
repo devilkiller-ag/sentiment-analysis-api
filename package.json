@@ -32,11 +32,13 @@
   "homepage": "https://github.com/devilkiller-ag/sentiment-analysis-api#readme",
   "dependencies": {
     "@prisma/client": "^6.6.0",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.1",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
     "husky": "^9.1.7",
