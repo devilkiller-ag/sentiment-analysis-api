@@ -6,7 +6,7 @@ import perfectionist from "eslint-plugin-perfectionist";
 
 export default tseslint.config(
   {
-    ignores: ["**/dist/**", "**/node_modules/**, **/*.js"],
+    ignores: ["**/dist/**", "**/node_modules/**", "**/generated/**", "**/prisma/migrations/**", "**/*.js"],
   },
   eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,

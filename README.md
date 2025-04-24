@@ -105,6 +105,7 @@ If a webhook URL was provided in `POST /input`, the server will `POST` results t
    ```bash
    # Add your environment variables here
    PORT=8000
+   DATABASE_URL="your_database_url"
    ```
 
 ### Development

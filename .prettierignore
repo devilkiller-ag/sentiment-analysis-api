@@ -1,2 +1,7 @@
-node_modules
-dist
+node_modules/
+dist/
+generated/
+prisma/migrations/
+coverage/
+.env
+.env.*
