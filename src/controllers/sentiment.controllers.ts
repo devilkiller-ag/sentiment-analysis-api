@@ -24,7 +24,7 @@ export const processSentiments = async (req: Request, res: Response): Promise<vo
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              id: sentence.id,
+              test: sentence.text,
               sentiment,
             }),
           });
