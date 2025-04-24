@@ -4,6 +4,14 @@ import { Sentence } from "#types/global.js";
 import { Request, Response } from "express";
 import fetch from "node-fetch";
 
+/**
+ * @description Process unprocessed sentences to analyze their sentiment, update the database, and send their result.
+ *
+ * @route POST /sentiment/process
+ * @param {Request} req - The request object.
+ * @param {Response} res - The response object.
+ * @returns {Promise<void>} - A promise that resolves to void
+ */
 export const processSentiments = async (req: Request, res: Response): Promise<void> => {
   const unprocessed = (await prisma.sentence.findMany({
     where: { sentiment: null },

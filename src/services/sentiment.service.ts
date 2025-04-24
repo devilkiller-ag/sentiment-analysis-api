@@ -5,6 +5,13 @@ import { HFResponse, Sentiment } from "./../types/global.d.js";
 const HUGGINGFACE_API_URL = "https://api-inference.huggingface.co/models/distilbert-base-uncased-finetuned-sst-2-english";
 const HF_API_KEY = process.env.HUGGINGFACE_API_KEY;
 
+/**
+ * Analyzes the sentiment of a given text using Hugging Face API.
+ *
+ * @param {string} text - The input sentence to analyze.
+ * @returns {Promise<Sentiment>} - The predicted sentiment label.
+ * @throws {Error} - If the API key is missing or the request fails.
+ */
 export const analyzeSentiment = async (text: string): Promise<Sentiment> => {
   if (!HF_API_KEY) {
     throw new Error("HUGGINGFACE_API_KEY is not defined");

@@ -2,7 +2,8 @@ import cors from "cors";
 import express from "express";
 import inputRoutes from "./routes/input.routes.js";
 import sentimentRoutes from "./routes/sentiment.routes.js";
-import { jsonMiddleware } from "./middlewares/middlewares.js";
+import healthRoutes from "./routes/health.routes.js";
+import { jsonMiddleware } from "./middlewares/json.middleware.js";
 import { errorHandler } from "#middlewares/error-handler.js";
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(jsonMiddleware);
 // ROUTES
 app.use("/", inputRoutes);
 app.use("/", sentimentRoutes);
+app.use("/", healthRoutes);
 
 // MIDDLEWARE: To handle errors globally (should be the last one in the stack).
 app.use(errorHandler);

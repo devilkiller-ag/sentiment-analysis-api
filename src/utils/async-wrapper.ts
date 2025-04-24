@@ -1,6 +1,17 @@
 import ApiError from "./api-error.js";
 import { NextFunction, Request, Response } from "express";
 
+/**
+ * Middleware to handle errors in Express routes.
+ * This function wraps the provided route handler function and catches any errors
+ * that occur during its execution, passing them to the next middleware.
+ * It handles both synchronous and asynchronous errors.
+ *
+ * @function asyncWrapper
+ * @param {Function} fn - The route handler function to wrap.
+ * @returns {Function} - A middleware function that handles errors.
+ * @throws {ApiError} - Throws an ApiError with a 500 status code for unexpected errors.
+ */
 export const asyncWrapper = (fn: Function) => {
   return (req: Request, res: Response, next: NextFunction) => {
     try {
