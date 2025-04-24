@@ -1,4 +1,3 @@
-// middlewares/error-handler.ts
 import config from "../config/config.js";
 import { Request, Response, NextFunction } from "express";
 import ApiError from "../utils/api-error.js";
