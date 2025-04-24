@@ -24,9 +24,8 @@ export const analyzeSentiment = async (text: string): Promise<Sentiment> => {
       throw new Error(`Failed to fetch sentiment analysis: ${response.statusText}`);
     }
 
-    const data = (await response.json()) as HFResponse;
-
-    const label = data[0]?.label.toUpperCase();
+    const data = (await response.json()) as HFResponse[];
+    const label = data[0][0]?.label.toUpperCase();
 
     if (label.includes("POSITIVE")) return Sentiment.POSITIVE;
     if (label.includes("NEGATIVE")) return Sentiment.NEGATIVE;

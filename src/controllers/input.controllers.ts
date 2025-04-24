@@ -10,6 +10,7 @@ export const storeSentences = async (req: Request, res: Response) => {
       count: created.length,
     });
   } catch (err) {
-    res.status(500).json({ error: "Failed to store sentences." });
+    console.error("Error storing sentences:", err);
+    res.status(500).json({ error: `Failed to store sentences: ${err}` });
   }
 };

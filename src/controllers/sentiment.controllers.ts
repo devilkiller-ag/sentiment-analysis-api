@@ -6,9 +6,9 @@ import fetch from "node-fetch";
 
 export const processSentiments = async (req: Request, res: Response): Promise<void> => {
   try {
-    const unprocessed = await prisma.sentence.findMany({
+    const unprocessed = (await prisma.sentence.findMany({
       where: { sentiment: null },
-    });
+    })) as Sentence[];
 
     const updated = await Promise.all(
       unprocessed.map(async (sentence: Sentence) => {
@@ -34,8 +34,13 @@ export const processSentiments = async (req: Request, res: Response): Promise<vo
       }),
     );
 
+    const result = updated.map((sentence) => ({
+      text: sentence.text,
+      sentiment: sentence.sentiment,
+    }));
+
     res.status(200).json({
-      updated,
+      result,
     });
   } catch (error) {
     res.status(500).json({ error: "Failed to process sentiments." });

@@ -1,6 +1,3 @@
-import { RequestHandler } from "express";
+import express from "express";
 
-export const middleware: RequestHandler = (req, res) => {
-  console.log("Middleware called");
-  res.send("Hello from sentiment analysis api middleware!");
-};
+export const jsonMiddleware = express.json();
