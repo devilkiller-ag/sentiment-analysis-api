@@ -2,6 +2,8 @@
 
 This is a sentiment analysis server built using Express Js and Hugging Face's Inference API. It provides an API endpoint to analyze the sentiment of given set of sentences.
 
+Server is live at [https://sentiment-analysis-api-eff1.onrender.com](https://sentiment-analysis-api-eff1.onrender.com).
+
 ## Endpoints
 
 ### `POST /input`
