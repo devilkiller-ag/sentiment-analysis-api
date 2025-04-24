@@ -90,23 +90,25 @@ If a webhook URL was provided in `POST /input`, the server will `POST` results t
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/devilkiller-ag/sentiment-analysis-api.git
-   cd sentiment-analysis-api
-   ```
+```bash
+git clone https://github.com/devilkiller-ag/sentiment-analysis-api.git
+cd sentiment-analysis-api
+```
 
 2. Install dependencies:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. Create a `.env` file in the root directory with your environment variables:
-   ```bash
-   # Add your environment variables here
-   PORT=8000
-   DATABASE_URL="your_database_url"
-   ```
+
+```bash
+# Add your environment variables here
+PORT=8000
+DATABASE_URL="your_database_url"
+HUGGINGFACE_API_KEY="your_huggingface_api_key"
+```
 
 ### Development
 
